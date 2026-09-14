@@ -24,5 +24,6 @@ pub mod fixed;
 pub mod log;
 pub mod membership;
 pub mod propagate;
+pub mod tree;
 
 pub use fixed::{Fixed6, SCALE};
