@@ -1,0 +1,33 @@
+[package]
+name = "graphset"
+description = "Generic Merkle trees, sorted-set membership proofs, weighted graph propagation, and exact fixed-point arithmetic -- no dependency on any particular caller's identifier or object types."
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+sha2 = "0.10"
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+unreachable_pub = "warn"
+rust_2018_idioms = { level = "warn", priority = -1 }
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+# Bit-identical results across implementations and runs is the point of
+# propagate() and Fixed6; floating point cannot give that.
+float_arithmetic = "deny"
+float_cmp = "deny"
+lossy_float_literal = "deny"
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+indexing_slicing = "deny"
+integer_division = "warn"
+# Determinism: results must not depend on hash iteration order.
+mutable_key_type = "deny"
+missing_errors_doc = "warn"
+missing_panics_doc = "warn"
